@@ -14,7 +14,7 @@ export class HeroEffects {
 
   @Effect()
   getHeroes$ = this.actions$.pipe(
-    ofType(heroActions.HeroActionTypes.GetHeros),
+    ofType(heroActions.HeroActionTypes.GetHeroes),
     switchMap(() => this.service.getHeroes()),
     map(response => new heroActions.LoadHeros({ heros: response }))
   )
