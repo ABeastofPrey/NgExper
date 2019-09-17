@@ -22,7 +22,7 @@ export class HeroComponent implements OnInit {
   }
 
   public getAll(): void {
-    this.store.dispatch(new heroActions.ClearHeros());
+    this.store.dispatch(new heroActions.GetHeroes());
   }
 
 }

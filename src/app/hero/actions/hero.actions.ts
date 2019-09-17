@@ -3,6 +3,7 @@ import { Update } from '@ngrx/entity';
 import { Hero } from '../models/hero.model';
 
 export enum HeroActionTypes {
+  GetHeroes = '[Hero] Get Heroes',
   LoadHeros = '[Hero] Load Heros',
   AddHero = '[Hero] Add Hero',
   UpsertHero = '[Hero] Upsert Hero',
@@ -13,6 +14,10 @@ export enum HeroActionTypes {
   DeleteHero = '[Hero] Delete Hero',
   DeleteHeros = '[Hero] Delete Heros',
   ClearHeros = '[Hero] Clear Heros'
+}
+
+export class GetHeroes implements Action {
+  readonly type = HeroActionTypes.GetHeroes;
 }
 
 export class LoadHeros implements Action {
@@ -74,7 +79,8 @@ export class ClearHeros implements Action {
 }
 
 export type HeroActions =
- LoadHeros
+ GetHeroes
+ | LoadHeros
  | AddHero
  | UpsertHero
  | AddHeros
