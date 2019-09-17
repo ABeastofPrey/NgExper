@@ -124,6 +124,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "NgExper"
+    }
+  },
+  "defaultProject": "NgExper",
+  "cli": {
+    "defaultCollection": "@ngrx/schematics"
+  }
 }
