@@ -3,9 +3,7 @@ import { Store } from '@ngrx/store';
 import * as fromStore from '../reducers/hero.reducer';
 import { Observable } from 'rxjs';
 import { Hero } from '../models/hero.model';
-
-import { HttpClient } from '@angular/common/http';
-import { catchError } from 'rxjs/operators';
+import { selectAllHeroes } from '../selectors/hero.selector';
 
 @Component({
   selector: 'app-hero',
@@ -14,19 +12,18 @@ import { catchError } from 'rxjs/operators';
 })
 export class HeroComponent implements OnInit {
 
-  public heroList: Observable<Hero[]>;
+  public heroState: Observable<Hero[]>;
 
-  constructor(private store: Store<fromStore.State>, private http: HttpClient) { }
+  constructor(private store: Store<fromStore.State>) { }
 
   ngOnInit() {
-    this.getHeroes();
+    this.heroState = this.store.select(selectAllHeroes);
   }
 
-  private getHeroes(): void {
-    this.heroList = this.http.get<Hero[]>('api/heroes').pipe(catchError(err => {
-      console.warn(err);
-      return new Observable<Hero[]>();
-    }));
+  public getAll(): void {
+    // this.store.dispatch(new GetHeros());
   }
 
 }
+
+// https://stackblitz.com/edit/tour-of-heroes-ngrx-entity?file=src%2Fentities%2Fheroes%2Fhero-effects.ts
