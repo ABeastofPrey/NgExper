@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { Store } from '@ngrx/store';
+import { Store, createAction } from '@ngrx/store';
 import * as fromStore from '../reducers/hero.reducer';
 import { Observable } from 'rxjs';
 import { Hero } from '../models/hero.model';
 import { selectAllHeroes } from '../selectors/hero.selector';
+import * as heroActions from '../actions/hero.actions';
 
 @Component({
   selector: 'app-hero',
@@ -21,7 +22,7 @@ export class HeroComponent implements OnInit {
   }
 
   public getAll(): void {
-    // this.store.dispatch(new GetHeros());
+    this.store.dispatch(new heroActions.ClearHeros());
   }
 
 }

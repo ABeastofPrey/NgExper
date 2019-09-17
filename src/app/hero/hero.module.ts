@@ -8,6 +8,8 @@ import { HeroComponent } from './hero/hero.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '../shared/services/in-memory-data.service';
 import { HeroService } from './services/hero.service';
+import { EffectsModule } from '@ngrx/effects';
+import { HeroEffects } from './effects/hero.effects';
 
 
 @NgModule({
@@ -16,8 +18,6 @@ import { HeroService } from './services/hero.service';
   imports: [
     CommonModule,
     HeroRoutingModule,
-    StoreModule.forFeature(fromHero.heroesFeatureKey, fromHero.reducer),
-
     // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
     // and returns simulated server responses.
     // Remove it when a real server is ready to receive requests.
@@ -29,7 +29,9 @@ import { HeroService } from './services/hero.service';
         delay: 1000,
         put204: false // return entity after PUT/update
       }
-    )
+    ),
+    StoreModule.forFeature(fromHero.heroesFeatureKey, fromHero.reducer),
+    EffectsModule.forFeature([HeroEffects])
   ]
 })
 export class HeroModule { }
