@@ -7,10 +7,12 @@ import * as fromHero from './reducers/hero.reducer';
 import { HeroComponent } from './hero/hero.component';
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from '../shared/services/in-memory-data.service';
+import { HeroService } from './services/hero.service';
 
 
 @NgModule({
   declarations: [HeroComponent],
+  providers: [HeroService],
   imports: [
     CommonModule,
     HeroRoutingModule,
