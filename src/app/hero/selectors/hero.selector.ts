@@ -6,13 +6,13 @@ import {
 
 import * as fromHero from '../reducers/hero.reducer';
 
-export interface State {
-    heroes: fromHero.State,
-}
+// export interface State {
+//     heroes: fromHero.State,
+// }
 
-export const reducers: ActionReducerMap<State> = {
-    heroes: fromHero.reducer,
-};
+// export const reducers: ActionReducerMap<State> = {
+//     heroes: fromHero.reducer,
+// };
 
 export const selectHeroState = createFeatureSelector<fromHero.State>(fromHero.heroesFeatureKey);
 

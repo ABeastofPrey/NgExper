@@ -11,7 +11,7 @@ import { reducers, metaReducers, initialState } from './reducers';
 import { FooModule } from './foo/foo.module';
 import { EffectsModule } from '@ngrx/effects';
 import { EntityDataModule } from '@ngrx/data';
-// import { HeroModule } from './hero/hero.module';
+import { NgxVirtualTableModule } from './shared/components/ngx-virtual-table/ngx-virtual-table.module';
 
 @NgModule({
   declarations: [
@@ -35,7 +35,7 @@ import { EntityDataModule } from '@ngrx/data';
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
     EntityDataModule,
-    // HeroModule
+    NgxVirtualTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

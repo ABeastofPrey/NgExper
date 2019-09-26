@@ -8,10 +8,10 @@ const createFoo = (state: State) => ({
     foo: state.foo + 1
 });
 
-// const fooReducer = createReducer(initialState, on(newFoo, createFoo));
+const fooReducer = createReducer(initialState, on(newFoo, createFoo));
 
-// export function reducer(state: State | undefined, action: Action) {
-//     return fooReducer(state, action);
-// }
+export function reducer(state: State | undefined, action: Action) {
+    return fooReducer(state, action);
+}
 
-export const reducer = (state: State | undefined, action: Action) => createReducer(initialState, on(newFoo, createFoo))(state, action);
+// export const reducer = (state: State | undefined, action: Action) => createReducer(initialState, on(newFoo, createFoo))(state, action);
