@@ -26,6 +26,8 @@
     "@ngrx/schematics": "^8.3.0",
     "@ngrx/store": "^8.3.0",
     "@ngrx/store-devtools": "^8.3.0",
+    "ramda": "^0.26.1",
+    "ramda-adjunct": "^2.21.0",
     "rxjs": "~6.4.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'ngx-virtual-row',
@@ -6,7 +6,12 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./virtual-row.component.scss']
 })
 export class NgxVirtualRowComponent implements OnInit {
+    @Input() rowData: any;
+
     constructor() { }
 
-    ngOnInit(): void { }
+    ngOnInit(): void {
+        console.log(this.rowData);
+        
+    }
 }

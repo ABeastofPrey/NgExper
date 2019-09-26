@@ -6,8 +6,19 @@
 <!-- <app-foo [inputAttr]="inputAttr"></app-foo>
 <span>{{inputAttr | async | json}}</span> -->
 
-<ngx-virtual-table></ngx-virtual-table>
-<ngx-virtual-row></ngx-virtual-row>
-<ngx-virtual-column></ngx-virtual-column>
-<hr />
+<ngx-virtual-table [data]="fakeUsers">
+  <ngx-virtual-row>
+    <ngx-virtual-column>
+      <button>btn-1</button>
+      <button>btn-2</button>
+      <button>btn-3</button>
+    </ngx-virtual-column>
+    <ngx-virtual-column>
+      <button>btn-a</button>
+      <button>btn-b</button>
+      <button>btn-c</button>
+    </ngx-virtual-column>
+  </ngx-virtual-row>
+</ngx-virtual-table>
+
 <router-outlet></router-outlet>

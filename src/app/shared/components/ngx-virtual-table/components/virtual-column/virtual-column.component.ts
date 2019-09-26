@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
     selector: 'ngx-virtual-column',
@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
     styleUrls: ['./virtual-column.component.scss']
 })
 export class NgxVirtualColumnComponent implements OnInit {
+    @Input() columnData: any;
+
     constructor() { }
 
     ngOnInit(): void { }
