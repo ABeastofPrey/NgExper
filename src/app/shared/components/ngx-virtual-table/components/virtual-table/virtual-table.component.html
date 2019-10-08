@@ -1,5 +1,18 @@
 <!-- <pre><code>{{data | json}}</code></pre> -->
-<p>virtual table</p>
-<ng-content></ng-content>
+
+<span>virtual table </span>
+<span>Below</span>
 <hr />
-<ng-template ngxVirtualTableHost></ng-template>
+<ng-template ngxVirtualTableHost>
+    <p>(A) This paragraph is displayed because the condition is false.</p>
+    <ng-content></ng-content>
+</ng-template>
+<!-- <p *ngxFor="[1, 2, 3]" class="unless a">
+    (A) This paragraph is displayed because the condition is false.
+</p> -->
+
+<!-- <div>
+    <ng-template [ngxFor]="[1, 2, 3, 4]">
+        <p>(A) This paragraph is displayed because the condition is false.</p>
+    </ng-template>    
+</div> -->

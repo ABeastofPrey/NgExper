@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, TemplateRef, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'ngx-virtual-row',
@@ -7,6 +7,8 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class NgxVirtualRowComponent implements OnInit {
     @Input() rowData: any;
+    @ViewChild('rowTemplate', {static: true})
+    public template: TemplateRef<any>
 
     constructor() { }
 

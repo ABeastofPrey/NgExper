@@ -64,7 +64,7 @@ export class AppComponent {
   }
 
   private initalUsers(): User[] {
-    return Array.from({length: 5}).map((_, n) => {
+    return Array.from({length: 2}).map((_, n) => {
       return new User(getRandomInt(1000, 9999), `User ${n + 1}`);
     });
   }
