@@ -8,6 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "cy": "cypress open",
     "analyze": "webpack-bundle-analyzer dist/NgExper/stats-es2015.json"
   },
   "private": true,
@@ -42,6 +43,7 @@
     "@types/node": "~8.9.4",
     "angular-in-memory-web-api": "^0.9.0",
     "codelyzer": "^5.0.0",
+    "cypress": "^3.5.0",
     "jasmine-core": "~3.4.0",
     "jasmine-spec-reporter": "~4.2.1",
     "karma": "~4.1.0",
