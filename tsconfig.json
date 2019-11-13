@@ -18,10 +18,17 @@
       "es2018",
       "dom"
     ],
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "jsx": "preserve"
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
-  }
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "src/app/vision-command/**/*.ts"
+  ]
 }
